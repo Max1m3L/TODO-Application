@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+    color: beige;
+}
+
+
+.blocks {
+    text-align: center;
+    font-size: 24px;
+    text-space: 5px;
+}

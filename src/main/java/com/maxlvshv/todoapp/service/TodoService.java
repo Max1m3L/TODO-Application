@@ -3,6 +3,7 @@ package com.maxlvshv.todoapp.service;
 import com.maxlvshv.todoapp.entity.TodoEntity;
 import com.maxlvshv.todoapp.exeptions.TheSameTodoAlreadyExistExeption;
 import com.maxlvshv.todoapp.models.Todo;
+import com.maxlvshv.todoapp.models.TodoFull;
 import com.maxlvshv.todoapp.repository.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,14 +29,18 @@ public class TodoService {
         return todoList;
     }
 
-    public Todo showOne(Long id) {
-        TodoEntity todo = todoRepo.findById(id).get();
-        return Todo.toModel(todo);
+    public TodoFull showOne(String title) {
+        TodoEntity todo = todoRepo.findByTitle(title);
+        return TodoFull.toModel(todo);
     }
 
     public void addTodo(TodoEntity todo) throws TheSameTodoAlreadyExistExeption {
         if (todoRepo.findByTitle(todo.getTitle()) != null)
             throw new TheSameTodoAlreadyExistExeption("you added the same todo early");
         todoRepo.save(todo);
+    }
+
+    public void delete(long id) {
+        todoRepo.deleteById(id);
     }
 }

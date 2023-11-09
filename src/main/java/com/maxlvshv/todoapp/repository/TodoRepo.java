@@ -10,5 +10,7 @@ import java.util.List;
 public interface TodoRepo extends CrudRepository<TodoEntity, Long> {
     TodoEntity findByTitle(String title);
 
+    void deleteById(long id);
+
     List<TodoEntity> findAll();
 }

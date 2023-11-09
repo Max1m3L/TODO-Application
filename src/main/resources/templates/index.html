@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todo</title>
+
+    <link th:href="@{/style/index.css}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>todo app</h1>
+    <h2>your todo: </h2>
+    <div class="blocks" th:each="todo: ${todoList}">
+        <a th:href="@{/{title}(title=${todo.getTitle()})}" th:text="${todo}"></a>
+
+        <form th:method="UPDATE" th:action="@{/{id}(id=${todo.setStatus(true)})}">
+            <input type="submit" value="done">
+        </form>
+        <br/>
+    </div>
+
+    <a href="http://localhost:8080/new">create a new todo!</a>
+
+</body>
+</html>
