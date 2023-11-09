@@ -27,7 +27,7 @@ public class TodoFull {
         String complete = "Not done";
         if (status)
             complete = "Done";
-        return title + " - status: " + complete + "\nDescription: " + description;
+        return title + "\n\tDescription: " + description;
     }
 }
 

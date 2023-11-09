@@ -2,11 +2,8 @@ package com.maxlvshv.todoapp.controllers;
 
 import com.maxlvshv.todoapp.entity.TodoEntity;
 import com.maxlvshv.todoapp.exeptions.TheSameTodoAlreadyExistExeption;
-import com.maxlvshv.todoapp.models.TodoFull;
 import com.maxlvshv.todoapp.service.TodoService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +19,9 @@ public class TodoController {
     }
 
     @GetMapping
-    public String getAll(Model model) {
+    public String getAll(Model model, TodoEntity entity) {
         model.addAttribute("todoList", todoService.showAll());
+        model.addAttribute("Entity", entity);
         return "index";
     }
 

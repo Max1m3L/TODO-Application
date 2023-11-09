@@ -5,7 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-    <p th:text="${todo}"></p>
+    <p th:text="${todo.getTitle()}"></p>
+
+    <span>description: </span><p th:text="${todo.getDescription()}"></p>
 
     <form th:method="DELETE" th:action="@{/{id}(id=${todo.getId()})}">
         <input type="submit" value="delete this todo">

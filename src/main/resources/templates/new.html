@@ -10,6 +10,7 @@
     <form th:method="POST" th:action="@{/}" th:object="${todo}">
         <label for="title">Enter title: </label>
         <input type="text" th:field="*{title}" id="title">
+        <br/>
         <label for="description">Enter title: </label>
         <input type="text" th:field="*{description}" id="description">
         <br/>
