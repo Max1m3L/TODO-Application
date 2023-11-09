@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>add todo</title>
+    <title>Новое задание</title>
+
+    <link th:href="@{/style/new.css}" rel="stylesheet"/>
 </head>
 <body>
-    <h1>form for create ur todo</h1>
+    <h1 class="title">Создавайте ваши задание ниже</h1>
 
-    <form th:method="POST" th:action="@{/}" th:object="${todo}">
-        <label for="title">Enter title: </label>
+    <form class="main" th:method="POST" th:action="@{/}" th:object="${todo}">
+        <label for="title">Задание: </label>
         <input type="text" th:field="*{title}" id="title">
         <br/>
-        <label for="description">Enter title: </label>
+        <label for="description">Описание: </label>
         <input type="text" th:field="*{description}" id="description">
         <br/>
-        <input type="submit" value="create">
+        <input class="btn" type="submit" value="СОЗДАТЬ">
     </form>
 
-    <a href="http://localhost:8080/">back to main page</a>
+    <a class="lint-btn" href="http://localhost:8080/">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
 </body>
 </html>
