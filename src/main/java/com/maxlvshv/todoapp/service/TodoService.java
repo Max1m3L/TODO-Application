@@ -34,10 +34,6 @@ public class TodoService {
         return TodoFull.toModel(todo);
     }
 
-    public void ubdate(TodoEntity todo) {
-        todo.setStatus(true);
-    }
-
     public void addTodo(TodoEntity todo) throws TheSameTodoAlreadyExistExeption {
         if (todoRepo.findByTitle(todo.getTitle()) != null)
             throw new TheSameTodoAlreadyExistExeption("you added the same todo early");

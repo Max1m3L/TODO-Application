@@ -14,6 +14,4 @@ public class TodoEntity {
     private String title;
 
     private String description;
-
-    private Boolean status;
 }

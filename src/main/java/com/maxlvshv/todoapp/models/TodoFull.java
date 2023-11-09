@@ -11,23 +11,17 @@ public class TodoFull {
 
     private String description;
 
-    private Boolean status;
-
     public static TodoFull toModel(TodoEntity todoEntity) {
         TodoFull model = new TodoFull();
         model.setId(todoEntity.getId());
         model.setTitle(todoEntity.getTitle());
         model.setDescription(todoEntity.getDescription());
-        model.setStatus(todoEntity.getStatus());
         return model;
     }
 
     @Override
     public String toString() {
-        String complete = "Not done";
-        if (status)
-            complete = "Done";
-        return title + "\n\tDescription: " + description;
+        return title + " Description: " + description;
     }
 }
 

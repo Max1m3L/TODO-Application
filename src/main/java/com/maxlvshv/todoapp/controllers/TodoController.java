@@ -2,6 +2,8 @@ package com.maxlvshv.todoapp.controllers;
 
 import com.maxlvshv.todoapp.entity.TodoEntity;
 import com.maxlvshv.todoapp.exeptions.TheSameTodoAlreadyExistExeption;
+import com.maxlvshv.todoapp.frontendLogic.CorrectTime;
+import com.maxlvshv.todoapp.frontendLogic.Counter;
 import com.maxlvshv.todoapp.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +23,8 @@ public class TodoController {
     @GetMapping
     public String getAll(Model model, TodoEntity entity) {
         model.addAttribute("todoList", todoService.showAll());
-        model.addAttribute("Entity", entity);
+        model.addAttribute("time", CorrectTime.get_correct_time());
+        model.addAttribute("counter", new Counter());
         return "index";
     }
 
@@ -40,12 +43,12 @@ public class TodoController {
     @PostMapping
     public String createTodo(@ModelAttribute TodoEntity todo) throws TheSameTodoAlreadyExistExeption {
         todoService.addTodo(todo);
-        return "redirect:/";
+        return "redirect:";
     }
 
     @PostMapping("/{id}")
     public String delete(@PathVariable long id) {
         todoService.delete(id);
-        return "redirect:/";
+        return "redirect:";
     }
 }
