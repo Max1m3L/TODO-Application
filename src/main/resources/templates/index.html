@@ -10,25 +10,26 @@
     <link th:href="@{/style/index.css}" rel="stylesheet"/>
 </head>
 <body>
-    <h1 class="title">todo app</h1>
-    <p class="time" th:text="${time}"></p>
-    <div class="gotoNewDiv">
-        <a class="goToNew" href="http://localhost:8080/new">Создать задание</a>
-    </div>
-    <h2 class="your" th:if="${todoList.size() != 0}">Ваши задачи: </h2>
+<h1 class="title">todo app</h1>
+<p class="time" th:text="${time}"></p>
+<div class="gotoNewDiv">
+    <a class="goToNew" href="http://localhost:8080/new">Создать задание</a>
+</div>
+<h2 class="your" th:if="${todoList.size() != 0}">Ваши задачи: </h2>
 
-    <div class="blocks" th:each="todo: ${todoList}" th:with="cnt = ${counter.get()}">
-        <div class="cntAndTodo" th:with="cnt = ${counter.incrementAndGet()}">
-            <p th:text="${cnt}"></p>
-            <p>) </p>
-            <a class="theTODO" th:href="@{/{title}(title=${todo.getTitle()})}" th:text="${todo}"></a>
-        </div>
-        <form th:method="DELETE" th:action="@{/{id}(id=${todo.getId()})}">
-            <input class="btn-del" type="submit" value="Удалить">
-        </form>
-        <br/>
+<div class="blocks" th:each="todo: ${todoList}" th:with="cnt = ${counter.get()}">
+    <div class="cntAndTodo" th:with="cnt = ${counter.incrementAndGet()}">
+        <p th:text="${cnt}"></p>
+        <p>) </p>
+        <a class="theTODO" th:href="@{/{title}(title=${todo.getTitle()})}" th:text="${todo}"></a>
     </div>
-    <p class="bottomMassage">*Нажмите на задание, чтобы узнать подробрости</p>
+    <form th:method="DELETE" th:action="@{/{id}(id=${todo.getId()})}">
+        <input class="btn-del" type="submit" value="Удалить">
+    </form>
+    <br/>
+</div>
+<p class="bottomMassage" th:if="${todoList.size() != 0}">*Нажмите на задание, чтобы узнать подробрости</p>
+<p class="bottomMassage" th:if="${todoList.size() == 0}">*Cоздайте новое задание</p>
 
 </body>
 </html>

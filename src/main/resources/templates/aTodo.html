@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${todo.getTitle()}"></title>
+
+    <link th:href="@{/style/theTodo.css}" rel="stylesheet"/>
 </head>
 <body>
-    <p th:text="${todo.getTitle()}"></p>
+<p class="title" th:text="${todo.getTitle()}"></p>
+<div class="discriptionDIV">
+    <p class="titleDesc" th:if="${todo.getDescription() != ''}">ОПИСАНИЕ: </p>
+    <p class="theDiscription" th:text="${todo.getDescription()}"></p>
+</div>
 
-    <span>description: </span><p th:text="${todo.getDescription()}"></p>
-
-    <form th:method="DELETE" th:action="@{/{id}(id=${todo.getId()})}">
-        <input type="submit" value="delete this todo">
-    </form>
-    <br>
-    <a href="http://localhost:8080/">back to main page</a>
+<form th:method="DELETE" th:action="@{/{id}(id=${todo.getId()})}">
+    <input class="del-btn" type="submit" value="УДАЛИТЬ ЭТО ЗАДАНИЕ">
+</form>
+<br>
+<a class="btn-a" href="http://localhost:8080/">ВЕРНУТЬСЯ НА ГЛАВНУЮ СТРАНИЦУ</a>
 </body>
 </html>

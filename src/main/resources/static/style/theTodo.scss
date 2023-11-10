@@ -1,0 +1,59 @@
+body {
+  background-color: rgb(29, 10, 141);
+
+  .title {
+    color: #f9f9f9;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .discriptionDIV {
+    display: flex;
+
+    .titleDesc {
+      color: #00bab1;
+      font-size: 22px;
+      font-weight: 500px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .theDiscription {
+      color: #ffffff;
+      margin-left: 20px;
+      font-size: 38px;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+
+  .del-btn {
+    background-color: #00bab1;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .btn-a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #057f30;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background-color: darken(#00ba69, 30%);
+    }
+  }
+}

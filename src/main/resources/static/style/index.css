@@ -13,11 +13,11 @@
 
 /* Links */
 
-a, a:link, a:visited  {
+a, a:link, a:visited {
     text-decoration: none;
 }
 
-a:hover  {
+a:hover {
     text-decoration: none;
 }
 
@@ -123,6 +123,7 @@ body {
 .gotoNewDiv {
     text-align: center;
 }
+
 .goToNew {
     background-color: #2b9a1a;
     border: none;
@@ -131,6 +132,7 @@ body {
     font-size: 21px;
     color: white;
     text-decoration: none;
+    transition: background 0.2s ease;
 }
 
 .blocks {
