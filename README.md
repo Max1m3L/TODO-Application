@@ -1,5 +1,5 @@
 # TODO App
-*I was learning java (java spring). And it's like interim results*
+*First java pet-project and it's like interim results*
 ______
 ***stack:***
 + Java Spring
@@ -15,11 +15,11 @@ git clone https://github.com/Max1m3L/TODO-Application.git
 cd todoApp
 ```
 ```
-then start -> TodoAppApplication.java
+then run -> TodoAppApplication.java
 (todoApp\src\main\java\com\maxlvshv\todoapp)
 ```
 ```
-and last open -> http://localhost:8080/
+then open -> http://localhost:8080
 ```
 ****p.s.**** Only if you have java and PostrgeSql in your PC
 ***later i'll do a docker file for easy start***
